@@ -1,0 +1,5 @@
+alias ls='ls -G'
+alias irc='ssh -t lovelace screen -rd'
+
+export PATH="/usr/pkg/sbin:/usr/pkg/bin:$PATH"
+export PS1='[\[[32;1m\]\u\[[0m\]@\[[34;1m\]\h\[[0m\] \[[36;1m\]\W\[[0m\]]\[[31;2m\]\$\[[0m\] '
