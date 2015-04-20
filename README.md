@@ -1,4 +1,4 @@
 personal
 ========
 
-My peronsal scripts and things
+Arbitrary scripts, dotfiles and similar
