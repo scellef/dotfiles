@@ -1,0 +1,13 @@
+alias ls='ls --group-directories-first --color=auto'
+alias la='ls -A'
+alias ll='ls -lhT'
+
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+alias screen='screen -U'
+alias scr='screen -r'
+alias go='eval $(ssh-agent) ; ssh-add'
+
+alias garbage="cat /dev/urandom | tr -cd '\43-\171'" 

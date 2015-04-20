@@ -1,0 +1,44 @@
+startup_message off
+encoding UTF-8 
+bind = resize =
+bind + resize +1
+bind - resize -1
+bind _ resize max
+
+hardstatus alwayslastline                                                                                                                          
+ hardstatus string '%{= kg}[ %{C}%H %{G}%l %{g}][%= %{= kw}%-Lw%{r}(%{W}%n*%f %t%{r})%{-}%?%+Lw %=%{g}][%{W} %c:%s %{b} %D %d %M %Y %{g}]'
+# hardstatus string '%{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
+# hardstatus string '%?%F%{.R.}%?%3n %t%? [%h]%?'
+# hardstatus string '%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<'
+
+# Note that % is an escape character
+# 
+# %{= kg} : Change background of entire string to black, text to green
+# [
+# %{G}    : Change text to bright green
+# %H      : Print hostname
+# %l      : Print loadav
+# %{g}    : Change text to green
+# ][
+# %=      : Pad the string to the displays width (hfill)
+# ${= kw} : Change background of entire string to black, text to white
+# %?      : Makes next part appear only if next % is non-empty (like ternary operator)
+# %-Lw    : Print previous windows with flag
+# %?      : As above
+# %{r}    : Change text to red
+# %{W}    : Change text to bright white
+# %n      : Print window number
+# *
+# %f      : Print window flags (either +, -, @, or blank)
+# %t      : Print window title
+# %?      : As above
+# %u      : Print all other users on this window
+# %?      : As above
+# %{r}    : As above
+# %{w}    : Change text to white
+# %?      : As above
+# %+Lw    : Add specified set to current attributes
+# %?      : As above
+# %?      : As above
+# %=      : As above
+
