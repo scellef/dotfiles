@@ -33,6 +33,10 @@ if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
 fi
 
+if [ ! -d ~/.backup ]; then
+	mkdir ~/.backup
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -147,3 +151,5 @@ $(
     echo '$Prompt' ; \
   fi
 )' 
+
+# vim: filetype=sh:ts=2:sw=2:expandtab
