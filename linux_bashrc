@@ -149,7 +149,7 @@ $(
     if [ $? -eq 1 ] ; then \
       echo '$GITPrompt$GITClean' ; \
     else \
-      git status -s | grep -qe '^[AM]' ; \
+      git status -s | grep -qe '^[AMRD]' ; \
       if [ $? -eq 0 ] ; then \
         echo '$GITPrompt$GITStage' ; \
       else \
