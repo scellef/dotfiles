@@ -6,7 +6,7 @@
 # (ab)use of bash arrays, interpolation, and shell arithmetic.
 
 # List of dotfiles to check.  Add new ones here!
-declare -a dotfiles=(.bashrc .bash_aliases .vimrc .screenrc)
+declare -a dotfiles=(.bashrc .bash_aliases .vimrc .screenrc .gitconfig)
 
 # This is how I like to organize my git repos:
 # ~/git/$SERVER/$PROJECT/$REPO
