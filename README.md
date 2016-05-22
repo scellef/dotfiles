@@ -1,4 +1,4 @@
 personal
 ========
 
-Arbitrary scripts, dotfiles and similar
+Obligatory dotfiles files repo

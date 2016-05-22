@@ -17,6 +17,7 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias scr='screen -r'
 alias screen='screen -U'
+alias o='xdg-open'
 
 alias go='eval $(ssh-agent) ; ssh-add'
 alias mktxt="$EDITOR $(date +%Y%m%d).txt"
