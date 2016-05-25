@@ -27,4 +27,9 @@ alias gits='git status'
 alias gitd='git diff'
 alias gitl='git log'
 
+# In case there local aliases I'd rather not publish to Github
+if [ -f ~/.bash_aliases.local ] ; then
+  . ~/.bash_aliases.local
+fi
+
 # vim: filetype=sh:ts=2:sw=2:expandtab
