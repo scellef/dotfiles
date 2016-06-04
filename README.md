@@ -1,4 +1,4 @@
-personal
+dotfiles
 ========
 
 Obligatory dotfiles files repo
