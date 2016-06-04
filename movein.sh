@@ -6,16 +6,32 @@
 # (ab)use of bash arrays, interpolation, and shell arithmetic.
 
 # List of dotfiles to check.  Add new ones here!
-declare -a dotfiles=(.bashrc .bash_aliases .vimrc .screenrc .gitconfig)
+declare -a dotfiles=(.bashrc .bash_aliases .bash_functions .vimrc .screenrc .gitconfig)
 
 # This is how I like to organize my git repos:
 # ~/git/$SERVER/$PROJECT/$REPO
 gitDir=${HOME}/git/github/scellef/personal
 
+# Make sure gitDir is actually there
+if [ ! -d $gitDir ] ; then
+  echo "ERROR: $gitDir does not exist."
+  exit 1
+fi
+
 # Check if they exist, rename if they do, then deploy the dotfiles
 for (( i=0 ; i < ${#dotfiles[@]} ; ++i )) ; do
+  timeStamp=$(date +%Y%m%d%H%M%S)
   if [ ${HOME}/${dotfiles[$i]} ] ; then
-    mv ${HOME}/${dotfiles[$i]} ${HOME}/${dotfiles[$i]}.orig # Juuust in case
+    # If file is already symlink, just unlink it
+    if [ -L ${HOME}/${dotfiles[$i]} ] ; then
+      unlink ${HOME}/${dotfiles[$i]}
+    # Otherwise, create a timestamped copy of the original file
+    else
+      mv ${HOME}/${dotfiles[$i]} ${HOME}/${dotfiles[$i]}.$timeStamp 2> /dev/null
+      if [ $? -eq 0 ] ; then
+        echo "INFO: Copied existing ${dotfiles[$i]} to ${HOME}/${dotfiles[$i]}.$timeStamp"
+      fi
+    fi
   fi
   ln -s $gitDir/${dotfiles[$i]} ${HOME}/${dotfiles[$i]}
 done
