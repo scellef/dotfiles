@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-Obligatory dotfiles files repo
+Obligatory dotfiles repo
