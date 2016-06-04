@@ -24,11 +24,13 @@ alias mktxt="$EDITOR $(date +%Y%m%d).txt"
 alias garbage="cat /dev/urandom | tr -cd '\43-\171'" 
 alias tstamp="date +%Y%m%d%H%M%S"
 
+alias gg='git-grab'
 alias gita='git add -p'
 alias gits='git status'
 alias gitd='git diff'
 alias gitc='git commit'
 alias gitl='git log'
+alias gitp='git push'
 
 # In case there local aliases I'd rather not publish to Github
 if [ -f ~/.bash_aliases.local ] ; then
