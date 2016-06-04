@@ -47,6 +47,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Fedora 23/24 apparently doesn't source system-installed shell
+# completion for users by default.  Adding this for completenesses sake.
+if [ -f /usr/share/bash-completion/bash_completion ] ; then
+    . /usr/share/bash-completion/bash_completion
+fi
+
 set -o emacs 
 
 # Color Definitions
