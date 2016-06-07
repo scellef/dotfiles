@@ -10,7 +10,7 @@ declare -a dotfiles=(.bashrc .bash_aliases .bash_functions .vimrc .screenrc .git
 
 # This is how I like to organize my git repos:
 # ~/git/$SERVER/$PROJECT/$REPO
-gitDir=${HOME}/git/github/scellef/personal
+gitDir=${HOME}/git/github/scellef/dotfiles
 
 # Make sure gitDir is actually there
 if [ ! -d $gitDir ] ; then
