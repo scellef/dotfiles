@@ -28,6 +28,8 @@ alias mktxt="$EDITOR $(date +%Y%m%d).txt"
 alias garbage="cat /dev/urandom | tr -cd '\43-\171'" 
 alias tstamp="date +%Y%m%d%H%M%S"
 alias ipa='ip addr | grep global | awk "{print $2}"'
+alias ipl='ip link'
+alias ipr='ip route'
 
 alias gg='git-grab'
 alias gita='git add -p'
