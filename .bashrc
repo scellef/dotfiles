@@ -27,7 +27,6 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-
 # Alias & Function definitions.
 
 if [ -f ~/.bash_aliases ]; then
@@ -48,6 +47,11 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+if [ -f /usr/share/bash-completion/bash_completion ] ; then
+  . /usr/share/bash-completion/bash_completion
+fi
+
 
 # Fedora 23/24 apparently doesn't source system-installed shell
 # completion for users by default.  Adding this for completenesses sake.
