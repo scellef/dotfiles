@@ -34,7 +34,20 @@ function sslvv {
   openssl x509 -noout -text
 }
 
-# In case there are local aliases I'd rather not publish to Github
+man() {
+  env \
+  LESS_TERMCAP_mb=$(printf "\e[1;35m") \
+  LESS_TERMCAP_md=$(printf "\e[1;36m") \
+  LESS_TERMCAP_me=$(printf "\e[0m") \
+  LESS_TERMCAP_se=$(printf "\e[0m") \
+  LESS_TERMCAP_so=$(printf "\e[1;47;30m") \
+  LESS_TERMCAP_ue=$(printf "\e[0m") \
+  LESS_TERMCAP_us=$(printf "\e[1;33m") \
+  man "$@"
+}
+
+
+# In case there local aliases I'd rather not publish to Github
 if [ -f ~/.bash_functions.local ] ; then
   . ~/.bash_functions.local
 fi
