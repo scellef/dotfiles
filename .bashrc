@@ -173,4 +173,11 @@ $(
   fi
 )' 
 
+# In case the overwrought PS1 starts breaking or stalling out (happens on remotely mounted git repos),
+# ensure we have an out for a humbler prompt:
+alias simple-prompt="export PS1='$IBlack$Time24h$Color_Off [$Green$User$Color_Off@$Blue$Host$Color_Off $Cyan$PathShort$Color_Off]$IBlack$Root$Color_Off '"
+
+# And in case the colors aren't availble:
+alias simple-prompt-bw="export PS1='$Time24h [$User@$Host $PathShort]$Root '"
+
 # vim: filetype=sh:ts=2:sw=2:expandtab
