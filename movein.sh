@@ -18,6 +18,11 @@ if [ ! -d $gitDir ] ; then
   exit 1
 fi
 
+# I like keeping my vim swap files in one place, rather than littering them everywhere
+if [ ! -d ~/.backup ] ; then
+  mkdir ~/.backup
+fi
+
 # Check if they exist, rename if they do, then deploy the dotfiles
 for (( i=0 ; i < ${#dotfiles[@]} ; ++i )) ; do
   timeStamp=$(date +%Y%m%d%H%M%S)
