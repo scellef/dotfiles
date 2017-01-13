@@ -34,7 +34,7 @@ function sslvv {
   openssl x509 -noout -text
 }
 
-man() {
+function man {
   env \
   LESS_TERMCAP_mb=$(printf "\e[1;35m") \
   LESS_TERMCAP_md=$(printf "\e[1;36m") \
@@ -44,6 +44,11 @@ man() {
   LESS_TERMCAP_ue=$(printf "\e[0m") \
   LESS_TERMCAP_us=$(printf "\e[1;33m") \
   man "$@"
+}
+
+function grepe {
+  # Print entire file to stdout with regex highlighted
+  grep -E "$1|$" $2
 }
 
 
