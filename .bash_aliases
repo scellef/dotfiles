@@ -1,9 +1,11 @@
+# Preferences
 alias ls='ls --group-directories-first --color'
 alias la='ls -A'
 alias ll='ls -lhT'
 alias grep='grep --color'
+alias screen='screen -U'
 
-# Safeties and shortcuts
+# Safeties 
 alias sl='ls'
 alias tial='tail'
 alias suod='sudo'
@@ -12,17 +14,19 @@ alias mv='mv -i'
 alias rm='rm -i'
 alias info='info --vi-keys'
 alias view='vim -R'
+
+# Shortcuts
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias ?='echo ${PIPESTATUS[@]}'
-alias screen='screen -U'
 alias scr='screen -r'
 alias o='xdg-open'
 alias clip='xclip -selection clipboard -i'
 
+# Miscellaneous
 alias go='eval $(ssh-agent) ; ssh-add'
 alias mktxt="$EDITOR $(date +%Y%m%d).txt"
 alias garbage="cat /dev/urandom | tr -cd '\43-\171'" 
@@ -31,6 +35,7 @@ alias ipa='ip addr | grep global | awk "{print $2}"'
 alias ipl='ip link'
 alias ipr='ip route'
 
+# Git shortcuts
 alias gg='git-grab'
 alias gita='git add -p'
 alias gits='git status'
