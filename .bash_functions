@@ -51,6 +51,15 @@ function grepe {
   grep -E "$1|$" $2
 }
 
+function batt {
+  if [ -d /sys/class/power_supply/BAT0/ ] ; then
+    . /sys/class/power_supply/BAT0/uevent 2> /dev/null
+    echo $(bc <<< "scale=2 ; 100 * $POWER_SUPPLY_CHARGE_NOW / $POWER_SUPPLY_CHARGE_FULL")% remaining
+  else
+    echo 'WARNING: Could not detect battery... Are you on a laptop?'
+  fi
+}
+
 
 # In case there local aliases I'd rather not publish to Github
 if [ -f ~/.bash_functions.local ] ; then
