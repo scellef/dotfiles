@@ -60,6 +60,11 @@ function batt {
   fi
 }
 
+function randomstring {
+  [ $1 -gt 0 ] 2> /dev/null && length=$1 || length='24'
+  cat /dev/urandom | tr -cd '[:alnum:]' | head -c $length ; echo
+}
+
 
 # In case there local aliases I'd rather not publish to Github
 if [ -f ~/.bash_functions.local ] ; then
