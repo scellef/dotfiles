@@ -53,8 +53,15 @@ function grepe {
 
 function batt {
   if [ -d /sys/class/power_supply/BAT0/ ] ; then
-    . /sys/class/power_supply/BAT0/uevent 2> /dev/null
-    echo $(bc <<< "scale=2 ; 100 * $POWER_SUPPLY_CHARGE_NOW / $POWER_SUPPLY_CHARGE_FULL")% remaining
+    # sysfs doesn't enclose its variables in spaces.  Working around by
+    # temporarily dumping to, sourcingand cleaning up a file
+    sed -e 's/=\(.*\)/="\1"/' /sys/class/power_supply/BAT0/uevent > /tmp/BAT0
+    source /tmp/BAT0 && rm -f /tmp/BAT0
+    if [ "$POWER_SUPPLY_MANUFACTURER" == 'Samsung SDI' ] ; then # Dell Latitude E7470
+      echo $(bc <<< "scale=2 ; 100 * $POWER_SUPPLY_CHARGE_NOW / $POWER_SUPPLY_CHARGE_FULL")% remaining
+    else
+      echo "INFO: Battery manufacturer unknown; time to update this function?"
+    fi
   else
     echo 'WARNING: Could not detect battery... Are you on a laptop?'
   fi
