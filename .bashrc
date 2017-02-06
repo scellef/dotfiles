@@ -20,9 +20,6 @@ export LC_ALL="en_US.UTF-8"
 # Praise be to the Editor of the Beast
 export EDITOR='/usr/bin/vim'
 
-# Adding ~/bin to PATH
-export PATH="${PATH}:${HOME}/bin"
-
 # Check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
