@@ -144,13 +144,13 @@ NewLine="\n"
 Jobs="\j"
 User="\u"
 Host="\h"
-Root="\$"
+Root='\$'
 
-GITDirty="'$BRed$Root$Color_Off '"
-GITStage="'$BGreen$Root$Color_Off '"
-GITClean="'$IBlack$Root$Color_Off '"
+GITDirty="\"$BRed$Root$Color_Off \""
+GITStage="\"$BGreen$Root$Color_Off \""
+GITClean="\"$IBlack$Root$Color_Off \""
 GITPrompt="['$BGreen$User$Color_Off'@'$BBlue$Host$Color_Off' '$BCyan$PathShort$Color_Off']"
-Prompt="['$Green$User$Color_Off'@'$Blue$Host$Color_Off' '$Cyan$PathShort$Color_Off']'$IBlack$Root$Color_Off'\ "
+Prompt="['$Green$User$Color_Off'@'$Blue$Host$Color_Off' '$Cyan$PathShort$Color_Off']\"$IBlack$Root$Color_Off\"\ "
 export PS1=$IBlack$Time24h$Color_Off\ '$(
   if [ $? -eq 0 ] ; then \
     echo "'$BGreen✓$Color_Off'" ; \
