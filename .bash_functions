@@ -20,7 +20,7 @@ function sslv {
   if [ -z $port ] ; then
     port="443"
   fi
-  openssl s_client -connect $hostname:$port -showcerts < /dev/null 2> /dev/null |
+  openssl s_client -connect $hostname:$port -servername $hostname -showcerts < /dev/null 2> /dev/null |
   openssl x509 -subject -issuer -dates -noout
 }
 
@@ -30,7 +30,7 @@ function sslvv {
   if [ -z $port ] ; then
     port="443"
   fi
-  openssl s_client -connect $1:$2 -showcerts < /dev/null 2> /dev/null |
+  openssl s_client -connect $1:$2 -servername $hostname -showcerts < /dev/null 2> /dev/null |
   openssl x509 -noout -text
 }
 
