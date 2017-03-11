@@ -157,7 +157,7 @@ export PS1=$IBlack$Time24h$Color_Off\ '$(
   else \
     echo "'$BRed✗$Color_Off'" ; fi) \
 $(
-  git branch &>/dev/null && [ -d ./.git ] ; \
+  git rev-parse --git-dir > /dev/null ; \
   if [ $? -eq 0 ] ; then \
     git status -s | grep -q '^' ; \
     if [ $? -eq 1 ] ; then \
