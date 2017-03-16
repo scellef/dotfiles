@@ -14,6 +14,10 @@ function udp {
   cat < /dev/udp/"$1"/"$2"
 }
 
+function ssl {
+  openssl x509 -in $1 -noout -text | less
+}
+
 function sslv {
   hostname="$1"
   port="$2"
@@ -49,6 +53,29 @@ function man {
 function grepe {
   # Print entire file to stdout with regex highlighted
   grep -E "$1|$" $2
+}
+
+function read_dom {
+  # Poor man's {X,HT}ML parser, shamelessly ganked from
+  # http://stackoverflow.com/a/6541324
+  local IFS='\>'
+  read -d \< entity content
+  local ret="$?"
+  tag=${entity%% *}
+  attributes=${entity#* }
+  return $ret
+}
+
+function scrape {
+  # Poor man's web scraper
+  target="$1"
+  url="$2"
+  while read_dom ; do
+    if [ "$tag" == "$target" ] ; then
+      eval local $attributes
+      echo $content
+    fi
+  done <<< $(curl -s $url)
 }
 
 function batt {
