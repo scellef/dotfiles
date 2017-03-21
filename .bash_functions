@@ -15,7 +15,9 @@ function udp {
 }
 
 function ssl {
-  openssl x509 -in $1 -noout -text | less
+  cert="$1" && shift 1
+  flags="${*--text}"
+  openssl x509 -in $cert -noout $flags
 }
 
 function sslv {
