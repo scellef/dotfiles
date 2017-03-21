@@ -25,6 +25,7 @@ alias ?='echo ${PIPESTATUS[@]}'
 alias scr='screen -r'
 alias o='xdg-open'
 alias clip='xclip -selection clipboard -i'
+alias rc='. ~/.bashrc'
 
 # Miscellaneous
 alias go='eval $(ssh-agent) ; ssh-add'
