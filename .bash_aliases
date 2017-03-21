@@ -16,6 +16,7 @@ alias info='info --vi-keys'
 alias view='vim -R'
 
 # Shortcuts
+alias L='less'        # Intended to be used like `foo|L`
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
