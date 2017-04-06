@@ -1,3 +1,10 @@
+function error { printf >&2 "[1;31mERROR: %s[0m\n" $* ;}
+function success { printf >&2 "[1;32mSUCCESS: %s[0m\n" $* ;}
+function warning { printf >&2 "[1;33mWARNING: %s[0m\n" $* ;}
+function prompt { printf >&2 "[1;36m%s[0m\n" $* ;}
+function quit { prompt "Exiting..." ; exit 0 ;}
+
+
 function git-grab {
   cd "$*" ; git pull ; cd -
 }
