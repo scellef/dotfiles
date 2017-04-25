@@ -111,7 +111,7 @@ function randomstring {
 
 function convert-win-timestamp {
   # Number of 100-nanosecond intervals since 1601 Jan 1 UTC
-  date -d @$(bc <<< "131372001714727101/10000000-${1}") '+%F %T %Z'
+  date -d @$(bc <<< "${1}/10000000-11644473600") '+%F %T %Z'
 }
 
 function convert-unix-timestamp {
