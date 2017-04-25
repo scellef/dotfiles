@@ -109,6 +109,15 @@ function randomstring {
   cat /dev/urandom | tr -cd '[:alnum:]' | head -c $length ; echo
 }
 
+function convert-win-timestamp {
+  # Number of 100-nanosecond intervals since 1601 Jan 1 UTC
+  date -d @$(bc <<< "131372001714727101/10000000-${1}") '+%F %T %Z'
+}
+
+function convert-unix-timestamp {
+  # Number of seconds since 1970 Jan 1 UTC
+  date -d @${1} '+%F %T %Z'
+}
 
 # In case there local aliases I'd rather not publish to Github
 if [ -f ~/.bash_functions.local ] ; then
