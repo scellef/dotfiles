@@ -28,10 +28,7 @@ function ssl {
 
 function sslv {
   hostname="$1"
-  port="$2"
-  if [ -z $port ] ; then
-    port="443"
-  fi
+  port="${2:-443}"
   openssl s_client -connect $hostname:$port -servername $hostname -showcerts < /dev/null 2> /dev/null |
   openssl x509 -subject -issuer -dates -noout
 }
