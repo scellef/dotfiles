@@ -20,6 +20,12 @@ function udp {
   cat < /dev/udp/"$1"/"$2"
 }
 
+function csr {
+  certReq="$1" && shift 1
+  flags="${*--text}"
+  openssl req -in $certReq -noout $flags
+}
+
 function ssl {
   cert="$1" && shift 1
   flags="${*--text}"
