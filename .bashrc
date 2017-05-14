@@ -2,7 +2,8 @@
 [ -z "$PS1" ] && return
 
 # Append to the history file, don't overwrite it
-shopt -s histappend
+shopt -s histappend histverify
+history -a
 
 # Set unlimited history file size
 HISTSIZE=-1
