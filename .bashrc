@@ -183,4 +183,6 @@ alias simple-prompt="export PS1='$IBlack$Time24h$Color_Off [$Green$User$Color_Of
 # And in case the colors aren't availble:
 alias simple-prompt-bw="export PS1='$Time24h [$User@$Host $PathShort]$Root '"
 
+export PROMPT_COMMAND='echo -ne "\033]0;$(date +%T) [${USER}@${HOSTNAME%%.*}]\007"'
+
 # vim: filetype=sh:ts=2:sw=2:expandtab
