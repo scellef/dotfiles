@@ -10,6 +10,7 @@ bind l focus right
 bind h focus left
 bind ` focus prev
 bind H hardcopy
+term screen-256color
 
 hardstatus alwayslastline                                                                                                                          
 hardstatus string '%{= kg}[ %{C}%H %{G}%l %{g}][%= %{= kw}%-Lw%{r}(%{W}%n*%f %t%{r})%{-}%?%+Lw %=%{g}][%{W} %c:%s %{b} %D %d %M %Y %{g}]'
