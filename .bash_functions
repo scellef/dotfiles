@@ -42,7 +42,7 @@ function sslv {
 function sslvv {
   hostname="$1"
   port="${2:-443}"
-  openssl s_client -connect $1:$2 -servername $hostname -showcerts < /dev/null 2> /dev/null |
+  openssl s_client -connect $hostname:$port -servername $hostname -showcerts < /dev/null 2> /dev/null |
   openssl x509 -noout -text
 }
 
