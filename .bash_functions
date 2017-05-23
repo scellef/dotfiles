@@ -7,7 +7,7 @@ function quit { prompt "Exiting..." ; exit 0 ;}
 function git-grab {
   targets=( ${*:-.} )
   for target in ${targets[*]} ; do
-    printf "%20s: " ${target}
+    printf "%-20s: " ${target}
     git -C $target pull --rebase
   done
 }
