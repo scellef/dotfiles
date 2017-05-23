@@ -5,11 +5,11 @@ function prompt { IFS='\n' printf >&2 "[1;36m%s[0m\n" "$*" ;}
 function quit { prompt "Exiting..." ; exit 0 ;}
 
 function git-grab {
-  cd "$*" ; git pull ; cd -
-}
-
-function git-stat {
-  cd "$*" ; git status -s ; cd - > /dev/null
+  targets=( ${*:-.} )
+  for target in ${targets[*]} ; do
+    printf "%20s: " ${target}
+    git -C $target pull --rebase
+  done
 }
 
 function tcp {
