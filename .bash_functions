@@ -5,7 +5,7 @@ function prompt { IFS='\n' printf >&2 "[1;36m%s[0m\n" "$*" ;}
 function quit { prompt "Exiting..." ; exit 0 ;}
 
 function git-grab {
-  targets=( ${*:-.} )
+  targets=( ${*:-$(pwd)} )
   for target in ${targets[*]} ; do
     printf "%-20s: " ${target}
     git -C $target pull --rebase
