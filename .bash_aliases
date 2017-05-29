@@ -28,6 +28,8 @@ alias sc='screen '
 alias o='xdg-open'
 alias clip='xclip -selection clipboard -i'
 alias rc='. ~/.bashrc'
+alias py='python3'
+alias py2='python2'
 
 # Miscellaneous
 alias go='eval $(ssh-agent) ; ssh-add'
