@@ -6,8 +6,17 @@ shopt -s histappend histverify
 history -a
 
 # Set unlimited history file size
-HISTSIZE=-1
-HISTFILESIZE=-1
+# In bash 4.3 and later, you can set the history envars to -1 to explicitly
+# declare unlimited history.  Earlier versions have a similar effect if the
+# variables are declared with an empty string.
+IFS='.' read -a bash_version <<< "$BASH_VERSION"
+if [ ${bash_version[0]} -ge 4 ] ; then
+  if [ ${bash_version[1]} -ge 3 ] ; then
+    HISTSIZE='-1' HISTFILESIZE='-1'
+  fi
+else
+  HISTSIZE='' HISTFILESIZE=''
+fi
 
 # Ignore lines beginning with space
 HISTCONTROL=ignorespace
