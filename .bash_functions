@@ -147,6 +147,17 @@ function parse-yaml {
   }'
 }
 
+function stubborn-ssh {
+  # Continue attempting to ssh into a host until it finally lets you
+  # Usually used when waiting on a system to come back online
+  false
+
+  while [ $? -ne 0 ]; do
+    sleep 3;
+    ssh $@ && true;
+  done
+}
+
 # In case there local aliases I'd rather not publish to Github
 if [ -f ~/.bash_functions.local ] ; then
   . ~/.bash_functions.local
