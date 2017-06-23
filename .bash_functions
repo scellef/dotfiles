@@ -5,6 +5,7 @@ function prompt { IFS='\n' printf >&2 "[1;36m%s[0m\n" "$*" ;}
 function quit { prompt "Exiting..." ; exit 0 ;}
 
 function git-grab {
+  # Pull from the specified repos all at once
   targets=( ${*:-$(pwd)} )
   for target in ${targets[*]} ; do
     printf "%-20s: " ${target}
@@ -13,26 +14,31 @@ function git-grab {
 }
 
 function tcp {
+  # Shortcut for making a TCP connection using bash's builtin capability
   cat < /dev/tcp/"$1"/"$2"
 }
 
 function udp {
+  # Shortcut for making a UDP connection using bash's builtin capability
   cat < /dev/udp/"$1"/"$2"
 }
 
 function csr {
+  # Parse a CSR and return it's full contents or specified values
   certReq="$1" && shift 1
   flags="${*--text}"
   openssl req -in $certReq -noout $flags
 }
 
 function ssl {
+  # Parse a PEM certificate and return it's full contents or specified values
   cert="$1" && shift 1
   flags="${*--text}"
   openssl x509 -in $cert -noout $flags
 }
 
 function sslv {
+  # Connect to a specified host and print some basic information about its certificate
   hostname="$1"
   port="${2:-443}"
   openssl s_client -connect $hostname:$port -servername $hostname -showcerts < /dev/null 2> /dev/null |
@@ -40,6 +46,7 @@ function sslv {
 }
 
 function sslvv {
+  # Connect to a specified host and print all information about its certificate
   hostname="$1"
   port="${2:-443}"
   openssl s_client -connect $hostname:$port -servername $hostname -showcerts < /dev/null 2> /dev/null |
@@ -47,6 +54,7 @@ function sslvv {
 }
 
 function man {
+  # Environmental variables for colorized manpages
   env \
   LESS_TERMCAP_mb=$(printf "\e[1;35m") \
   LESS_TERMCAP_md=$(printf "\e[1;36m") \
@@ -87,6 +95,7 @@ function scrape {
 }
 
 function batt {
+  # Print kernel's understanding of the remaining charge in system battery
   if [ -d /sys/class/power_supply/BAT0/ ] ; then
     # sysfs doesn't enclose its variables in spaces.  Working around by
     # temporarily dumping to, sourcing and cleaning up a file
@@ -105,6 +114,7 @@ function batt {
 }
 
 function randomstring {
+  # Sometimes you just need a string full of garbage
   [ $1 -gt 0 ] 2> /dev/null && length=$1 || length='24'
   cat /dev/urandom | tr -cd '[:alnum:]' | head -c $length ; echo
 }
@@ -119,7 +129,8 @@ function convert-unix-timestamp {
   date -d @${1} '+%F %T %Z'
 }
 
-function parse_yaml {
+function parse-yaml {
+  # Half-assed YAML parser for distinguishing keys from values
   local prefix=$2
   local s='[[:space:]]*' w='[a-zA-Z0-9_]*' fs=$(echo @|tr @ '\034')
   sed -ne "s|^\($s\):|\1|" \
