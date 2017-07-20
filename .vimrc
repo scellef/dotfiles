@@ -100,3 +100,10 @@ endif
 	set expandtab
 
 colorscheme elflord
+
+" Activate pathogen
+execute pathogen#infect()
+
+" Change vimwiki syntax to markdown
+let g:vimwiki_list = [{'path': '~/wiki/',
+                     \ 'syntax': 'markdown', 'ext': '.md'}]
