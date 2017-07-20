@@ -42,7 +42,7 @@ alias ipr='ip route'
 
 # Git shortcuts
 alias gg='git-grab'
-alias gita='git add -p'
+alias gita='git add .'
 alias gits='git status'
 alias gitd='git diff'
 alias gitc='git commit'
