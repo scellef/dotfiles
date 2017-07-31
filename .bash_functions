@@ -158,6 +158,20 @@ function stubborn-ssh {
   done
 }
 
+function time-page-load {
+  # Generate a TSV of timings for website page loads
+  siteUrl="$1"
+
+  prompt "Recording page load times, Ctrl+C to exit:"
+  while : ; do
+    export TIMEFORMAT=%2R ; date +%T | tr '\n' '\t' >> $siteUrl.tsv
+    { time curl -sko /dev/null $siteUrl ;} 2>> $siteUrl.tsv
+    sleep 300
+  done
+}
+
+
+
 # In case there local aliases I'd rather not publish to Github
 if [ -f ~/.bash_functions.local ] ; then
   . ~/.bash_functions.local
