@@ -8,9 +8,8 @@
 # List of dotfiles to check.  Add new ones here!
 declare -a dotfiles=(.bash_profile .bashrc .bash_aliases .bash_functions .vimrc .screenrc .gitconfig)
 
-# This is how I like to organize my git repos:
-# ~/git/$SERVER/$PROJECT/$REPO
-gitDir=${HOME}/git/github/scellef/dotfiles
+# This is how I like to organize my github repos:
+gitDir=${HOME}/git/github/people/scellef/dotfiles
 
 # Make sure gitDir is actually there
 if [ ! -d $gitDir ] ; then
