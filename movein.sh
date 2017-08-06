@@ -6,7 +6,16 @@
 # (ab)use of bash arrays, interpolation, and shell arithmetic.
 
 # List of dotfiles to check.  Add new ones here!
-declare -a dotfiles=(.bash_profile .bashrc .bash_aliases .bash_functions .vimrc .screenrc .gitconfig)
+declare -a dotfiles=(
+  .bash_profile
+  .bashrc
+  .bash_aliases
+  .bash_functions
+  .vimrc
+  .screenrc
+  .gitconfig
+  .inputrc
+)
 
 # This is how I like to organize my github repos:
 gitDir=${HOME}/git/github/people/scellef/dotfiles
