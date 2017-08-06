@@ -152,11 +152,13 @@ function parse-yaml {
 function stubborn-ssh {
   # Continue attempting to ssh into a host until it finally lets you
   # Usually used when waiting on a system to come back online
+  export TIMEFORMAT="2%R"
+
   false
 
   while [ $? -ne 0 ]; do
     sleep 3;
-    ssh $@ && true;
+    time ssh $@ && true;
   done
 }
 
