@@ -5,7 +5,6 @@ set mark-symlinked-directories On
 set completion-query-items 50
 set completion-ignore-case On
 set completion-prefix-display-length 3
-set show-all-if-ambiguous On
 
 set blink-matching-paren On
 set expand-tilde On
