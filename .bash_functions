@@ -174,6 +174,20 @@ function time-page-load {
   done
 }
 
+function ssh-fingerprint {
+  sshKey="$1"
+
+  for i in md5 sha1 sha256 ; do
+    ssh-keygen -l -f $sshKey -E $i
+  done
+
+  [[ $(head -n1 $sshKey) =~ PRIVATE ]] \
+    && ssh-keygen -y -f $sshKey \
+    || cat $sshKey
+}
+
+
+
 
 
 # In case there local aliases I'd rather not publish to Github
