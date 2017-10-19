@@ -1,5 +1,4 @@
 set colored-stats On
-set visibile-stats On
 set mark-symlinked-directories On
 
 set completion-query-items 50
