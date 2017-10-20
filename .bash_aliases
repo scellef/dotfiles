@@ -44,7 +44,7 @@ alias ustamp="date +%s"
 alias ipa='ip addr | grep global | awk "{print $2}"'
 alias ipl='ip link'
 alias ipr='ip route'
-alias t='t timeline -n 50 -dar -C icon'
+alias tt='t timeline -n 50 -dar -C icon'
 
 # Git shortcuts
 alias gg='git-grab'
