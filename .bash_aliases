@@ -45,6 +45,7 @@ alias ipa='ip addr | grep global | awk "{print $2}"'
 alias ipl='ip link'
 alias ipr='ip route'
 alias tt='t timeline -n 50 -dar -C icon'
+alias ts='t stream timeline -C icon -d'
 
 # Git shortcuts
 alias gg='git-grab'
