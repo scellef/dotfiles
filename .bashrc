@@ -198,4 +198,9 @@ else                     # Otherwise, set the terminal title
   export PROMPT_COMMAND='echo -ne "\033]0;$(date +%T) [${USER}@${HOSTNAME%%.*}]\007"'
 fi
 
+# In case there are local modifications that I don't want to add above
+if [ -f ~/.bashrc.local ] ; then
+  . ~/.bashrc.local
+fi
+
 # vim: filetype=sh:ts=2:sw=2:expandtab
