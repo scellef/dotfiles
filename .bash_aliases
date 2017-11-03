@@ -60,10 +60,16 @@ alias gitb='git branch'
 alias gitr='git remote'
 
 # Vagrant shortcuts
+alias vs='vagrant status'
+alias vu='vagrant up'
+alias vd='vagrant destroy'
 alias vdu='vagrant destroy -f ; vagrant up'
 alias vsg='vagrant global-status'
 alias vba='vagrant box add'
 alias vbu='vagrant box update'
+alias vssh='vagrant ssh'
+alias vpsh='vagrant powershell'
+alias vrdp='vagrant rdp'
 
 # In case there local aliases I'd rather not publish to Github
 if [ -f ~/.bash_aliases.local ] ; then
