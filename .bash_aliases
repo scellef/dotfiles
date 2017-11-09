@@ -62,6 +62,7 @@ alias gitr='git remote'
 # Vagrant shortcuts
 alias vs='vagrant status'
 alias vu='vagrant up'
+alias vr='vagrant reload'
 alias vd='vagrant destroy'
 alias vdu='vagrant destroy -f ; vagrant up'
 alias vsg='vagrant global-status'
