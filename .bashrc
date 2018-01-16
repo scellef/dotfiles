@@ -13,6 +13,8 @@ IFS='.' read -a bash_version <<< "$BASH_VERSION"
 if [ ${bash_version[0]} -ge 4 ] ; then
   if [ ${bash_version[1]} -ge 3 ] ; then
     HISTSIZE='-1' HISTFILESIZE='-1'
+  else
+    HISTSIZE='' HISTFILESIZE=''
   fi
 else
   HISTSIZE='' HISTFILESIZE=''
