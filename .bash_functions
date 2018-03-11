@@ -105,7 +105,7 @@ function batt {
       echo $(bc <<< "scale=2 ; 100 * $POWER_SUPPLY_CHARGE_NOW / $POWER_SUPPLY_CHARGE_FULL")% remaining
     elif [ "$POWER_SUPPLY_MANUFACTURER" == 'LGC-LGC5.53' ] ; then # Dell Latitude E7370
       echo $(bc <<< "scale=2 ; 100 * $POWER_SUPPLY_CHARGE_NOW / $POWER_SUPPLY_CHARGE_FULL")% remaining
-    elif [ "$POWER_SUPPLY_MANUFACTURER" == 'SMP-ATL' ] ; then # Chromebook Pixel 2
+    elif [[ "$POWER_SUPPLY_MANUFACTURER" =~ 'SMP' ]] ; then # Chromebook Pixel 2, Latitude 5289
       echo $(bc <<< "scale=2 ; 100 * $POWER_SUPPLY_CHARGE_NOW / $POWER_SUPPLY_CHARGE_FULL")% remaining
     elif [ "$POWER_SUPPLY_MANUFACTURER" == 'SANYO' ] ; then # ThinkPad T420
       echo $(bc <<< "scale=2 ; 100 * $POWER_SUPPLY_ENERGY_NOW / $POWER_SUPPLY_ENERGY_FULL")% remaining
