@@ -35,7 +35,7 @@ alias o='popd'
 alias d='dirs -l'
 
 # Miscellaneous
-alias go='eval $(ssh-agent) ; ssh-add'
+alias go-ssh='eval $(ssh-agent) ; ssh-add'
 alias mktxt="$EDITOR $(date +%Y%m%d).txt"
 alias garbage="cat /dev/urandom | tr -cd '\43-\171'" 
 alias pdate='date +%Y%m%d'
