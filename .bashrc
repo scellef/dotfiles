@@ -205,4 +205,6 @@ if [ -f ~/.bashrc.local ] ; then
   . ~/.bashrc.local
 fi
 
+umask 022
+
 # vim: filetype=sh:ts=2:sw=2:expandtab
