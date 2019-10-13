@@ -73,6 +73,11 @@ if [ -f /usr/share/bash-completion/bash_completion ] ; then
     . /usr/share/bash-completion/bash_completion
 fi
 
+# Adding kubectl completion, if available
+if [ -z $(which kubectl) ] ; then
+  echo 'source <(kubectl completion bash)' >>~/.bashrc
+fi
+
 set -o emacs 
 
 # Color Definitions
@@ -165,9 +170,9 @@ GITPrompt="['$BGreen$User$Color_Off'@'$BBlue$Host$Color_Off' '$BCyan$PathShort$C
 Prompt="['$Green$User$Color_Off'@'$Blue$Host$Color_Off' '$Cyan$PathShort$Color_Off']\"$IBlack$Root$Color_Off\"\ "
 export PS1=$IBlack$Time24h$Color_Off\ '$(
   if [ $? -eq 0 ] ; then \
-    echo "'$BGreen\\342\\234\\224$Color_Off'" ; \
+    echo "'$BGreen+$Color_Off'" ; \
   else \
-    echo "'$BRed\\342\\235\\214$Color_Off'" ; fi) \
+    echo "'$BRed-$Color_Off'" ; fi) \
 $(
   git rev-parse --git-dir > /dev/null 2>&1 /dev/null; \
   if [ $? -eq 0 ] ; then \
