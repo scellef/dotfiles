@@ -74,8 +74,8 @@ if [ -f /usr/share/bash-completion/bash_completion ] ; then
 fi
 
 # Adding kubectl completion, if available
-if [ -z $(which kubectl) ] ; then
-  echo 'source <(kubectl completion bash)' >>~/.bashrc
+if [ -n "$(which kubectl 2> /dev/null)" ] ; then
+  source <(kubectl completion bash)
 fi
 
 set -o emacs 
