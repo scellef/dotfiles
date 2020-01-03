@@ -32,7 +32,6 @@ alias py='python3'
 alias py2='python2'
 alias p='pushd'
 alias o='popd'
-alias d='dirs -l'
 
 # Miscellaneous
 alias go-ssh='eval $(ssh-agent) ; ssh-add'
@@ -73,6 +72,14 @@ alias vbu='vagrant box update'
 alias vssh='vagrant ssh'
 alias vpsh='vagrant powershell'
 alias vrdp='vagrant rdp'
+
+# Docker shortcuts
+alias d='docker'
+alias ds='docker ps -a'
+alias dr='docker run'
+alias de='docker exec'
+alias dp='docker pull'
+
 
 # In case there local aliases I'd rather not publish to Github
 if [ -f ~/.bash_aliases.local ] ; then
