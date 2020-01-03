@@ -79,6 +79,7 @@ alias ds='docker ps -a'
 alias dr='docker run'
 alias de='docker exec'
 alias dp='docker pull'
+alias dui='docker images --format="{{print (.Repository) \":\" (.Tag) }}" | xargs -n1 docker pull'
 
 
 # In case there local aliases I'd rather not publish to Github
