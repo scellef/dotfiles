@@ -60,6 +60,7 @@ alias gitb='git branch'
 alias gitr='git remote'
 
 # Vagrant shortcuts
+alias v='vagrant'
 alias vs='vagrant status'
 alias vu='vagrant up'
 alias vr='vagrant reload'
