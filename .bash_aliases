@@ -82,6 +82,12 @@ alias de='docker exec'
 alias dp='docker pull'
 alias dui='docker images --format="{{print (.Repository) \":\" (.Tag) }}" | xargs -n1 docker pull'
 
+# Kubernetes shortcuts
+alias k='kubectl'
+alias kgp='kubectl get pods'
+alias kgn='kubectl get nodes'
+alias kgs='kubectl get services'
+
 
 # In case there local aliases I'd rather not publish to Github
 if [ -f ~/.bash_aliases.local ] ; then
