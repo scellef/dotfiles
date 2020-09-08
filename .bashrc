@@ -76,6 +76,7 @@ fi
 # Adding kubectl completion, if available
 if [ -n "$(which kubectl 2> /dev/null)" ] ; then
   source <(kubectl completion bash)
+  complete -F __start_kubectl k
 fi
 
 set -o emacs 
