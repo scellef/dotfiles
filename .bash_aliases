@@ -47,6 +47,7 @@ alias ipl='ip link'
 alias ipr='ip route'
 alias tt='t timeline -n 50 -dar -C icon'
 alias ts='t stream timeline -C icon -d'
+alias no-comment="grep -v '^ *#\|^$'"
 
 # Git shortcuts
 alias gg='git-grab'

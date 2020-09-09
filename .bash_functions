@@ -190,9 +190,9 @@ function ssh-fingerprint {
     || cat $sshKey
 }
 
-
-
-
+function ocr {
+  tesseract -l eng "$*" - 2> /dev/null
+}
 
 # In case there local aliases I'd rather not publish to Github
 if [ -f ~/.bash_functions.local ] ; then
