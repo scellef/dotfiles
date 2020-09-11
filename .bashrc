@@ -79,6 +79,11 @@ if [ -n "$(which kubectl 2> /dev/null)" ] ; then
   complete -F __start_kubectl k
 fi
 
+# Adding docker completion shortcut, if available
+if [ -n "$(which docker 2> /dev/null)" ] ; then
+  complete -F _docker d
+fi
+
 set -o emacs 
 
 # Color Definitions
