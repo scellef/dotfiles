@@ -84,6 +84,12 @@ if [ -n "$(which docker 2> /dev/null)" ] ; then
   complete -F _docker d
 fi
 
+# Adding minikube completion shortcut, if available
+if [ -n "$(which minikube 2> /dev/null)" ] ; then
+  source <(minikube completion bash)
+  complete -F __start_minikube m
+fi
+
 set -o emacs 
 
 # Color Definitions
