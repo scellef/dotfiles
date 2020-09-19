@@ -90,6 +90,11 @@ if [ -n "$(which minikube 2> /dev/null)" ] ; then
   complete -F __start_minikube m
 fi
 
+# Adding tmux comlpetion shortcut, if available
+if [ -n "$(which tmux 2> /dev/null)" ] ; then
+  complete -F _tmux t
+fi
+
 set -o emacs 
 
 # Color Definitions
