@@ -25,6 +25,7 @@ alias ......='cd ../../../../..'
 alias ?='echo ${PIPESTATUS[@]}'
 alias scr='screen -r'
 alias sc='screen '
+alias t='tmux'
 alias open='xdg-open'
 alias clip='xclip -selection clipboard -i'
 alias c='vis-clipboard --copy'
@@ -45,8 +46,6 @@ alias ustamp="date +%s"
 alias ipa='ip addr | grep global | awk "{print $2}"'
 alias ipl='ip link'
 alias ipr='ip route'
-alias tt='t timeline -n 50 -dar -C icon'
-alias ts='t stream timeline -C icon -d'
 alias no-comment="grep -v '^ *#\|^$'"
 
 # Git shortcuts
