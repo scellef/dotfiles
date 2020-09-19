@@ -15,6 +15,7 @@ declare -a dotfiles=(
   .screenrc
   .gitconfig
   .inputrc
+  .tmux.conf
 )
 
 # This is how I like to organize my github repos:
