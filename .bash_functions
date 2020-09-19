@@ -199,4 +199,13 @@ if [ -f ~/.bash_functions.local ] ; then
   . ~/.bash_functions.local
 fi
 
+ssh() {
+  if [[ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" =~ "tmux" ]]; then
+    tmux rename-window "$(echo $* | cut -d . -f 1)"
+    command ssh "$@"
+    tmux set-window-option automatic-rename "on" 1>/dev/null
+  else
+    command ssh "$@"
+  fi
+}
 # vim: filetype=sh:ts=2:sw=2:expandtab
