@@ -194,11 +194,6 @@ function ocr {
   tesseract -l eng "$*" - 2> /dev/null
 }
 
-# In case there local aliases I'd rather not publish to Github
-if [ -f ~/.bash_functions.local ] ; then
-  . ~/.bash_functions.local
-fi
-
 ssh() {
   if [[ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" =~ "tmux" ]]; then
     tmux rename-window "$(echo $* | cut -d . -f 1)"
@@ -224,5 +219,10 @@ function mv-recent-downloads {
 
   find $XDG_DOWNLOAD_DIR -type f -mmin -$interval -exec mv -i {} $dest \;
 }
+
+# In case there local aliases I'd rather not publish to Github
+if [ -f ~/.bash_functions.local ] ; then
+  . ~/.bash_functions.local
+fi
 
 # vim: filetype=bash:ts=2:sw=2:expandtab
