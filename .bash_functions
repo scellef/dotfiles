@@ -208,4 +208,21 @@ ssh() {
     command ssh "$@"
   fi
 }
+
+function mv-recent-downloads {
+  # Grab everything from $XDG_DOWNLOAD_DIR or equivalent and move to target dir
+
+  # Move everything within the last n minutes (or 5 by default)
+  interval=${1:-5}
+
+  # Move to the specified directory (or $PWD by default)
+  dest=${2:-.}
+
+  [ -r ~/.config/user-dirs.dirs ] \
+    && . ~/.config/user-dirs.dirs \
+    || XDG_DOWNLOAD_DIR=~/downloads
+
+  find $XDG_DOWNLOAD_DIR -type f -mmin -$interval -exec mv -i {} $dest \;
+}
+
 # vim: filetype=bash:ts=2:sw=2:expandtab
