@@ -208,4 +208,4 @@ ssh() {
     command ssh "$@"
   fi
 }
-# vim: filetype=sh:ts=2:sw=2:expandtab
+# vim: filetype=bash:ts=2:sw=2:expandtab
