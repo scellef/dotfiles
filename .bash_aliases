@@ -88,6 +88,7 @@ alias k='kubectl'
 alias kgp='kubectl get pods'
 alias kgn='kubectl get nodes'
 alias kgs='kubectl get services'
+alias kx='kubectl exec -it'
 
 # Minikube shortcuts
 alias m='minikube'
