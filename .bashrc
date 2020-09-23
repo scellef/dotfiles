@@ -71,6 +71,7 @@ fi
 # completion for users by default.  Adding this for completenesses sake.
 if [ -f /usr/share/bash-completion/bash_completion ] ; then
     . /usr/share/bash-completion/bash_completion
+    . /usr/share/bash-completion/completions/*
 fi
 
 # Adding kubectl completion, if available
