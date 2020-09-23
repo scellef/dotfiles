@@ -79,6 +79,7 @@ alias vrdp='vagrant rdp'
 # Docker shortcuts
 alias d='docker'
 alias ds='docker ps -a'
+alias dsh='docker ps --format "table {{.Names}}\t{{.Status}}"'
 alias dr='docker run'
 alias de='docker exec'
 alias dp='docker pull'
