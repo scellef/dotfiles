@@ -220,6 +220,22 @@ function mv-recent-downloads {
   find $XDG_DOWNLOAD_DIR -type f -mmin -$interval -exec mv -i {} $dest \;
 }
 
+function mv-recent-screenshots {
+  # Grab everything from $XDG_DOWNLOAD_DIR or equivalent and move to target dir
+
+  # Move everything within the last n minutes (or 5 by default)
+  interval=${1:-5}
+
+  # Move to the specified directory (or $PWD by default)
+  dest=${2:-.}
+
+  [ -r ~/.config/user-dirs.dirs ] \
+    && . ~/.config/user-dirs.dirs \
+    || XDG_PICTURES_DIR=~/pictures
+
+  find $XDG_PICTURES_DIR -type f -mmin -$interval -exec mv -i {} $dest \;
+}
+
 # In case there local aliases I'd rather not publish to Github
 if [ -f ~/.bash_functions.local ] ; then
   . ~/.bash_functions.local

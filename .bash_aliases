@@ -37,6 +37,8 @@ alias py='python3'
 alias py2='python2'
 alias p='pushd'
 alias o='popd'
+alias mvs='mv-recent-screenshots'
+alias mvd='mv-recent-downloads'
 
 # Miscellaneous
 alias go-ssh='eval $(ssh-agent) ; ssh-add'
