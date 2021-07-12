@@ -26,6 +26,9 @@ HISTCONTROL=ignorespace
 # Prepend a timestamp in front of each command
 HISTTIMEFORMAT="%F:%T "
 
+# Disabling XON flow control to allow forward history search
+stty -ixon
+
 # Ensuring UTF-8 behaves
 export LC_ALL="en_US.UTF-8"
 
