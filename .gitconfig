@@ -13,3 +13,5 @@
   plog = log --graph --decorate --pretty=medium --abbrev-commit
   review = log --reverse
   co = checkout
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
