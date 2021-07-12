@@ -80,6 +80,11 @@ if [ -n "$(which kubectl 2> /dev/null)" ] ; then
   complete -F __start_kubectl k
 fi
 
+# Adding oc completion, if available
+if [ -n "$(which oc 2> /dev/null)" ] ; then
+  source <(oc completion bash)
+fi
+
 # Adding docker completion shortcut, if available
 if [ -n "$(which docker 2> /dev/null)" ] ; then
   complete -F _docker d
@@ -231,3 +236,14 @@ fi
 umask 022
 
 # vim: filetype=sh:ts=2:sw=2:expandtab
+
+
+complete -C /usr/bin/vault vault
+
+# >>>> Vagrant command completion (start)
+. /opt/vagrant/embedded/gems/2.2.16/gems/vagrant-2.2.16/contrib/bash/completion.sh
+# <<<<  Vagrant command completion (end)
+
+complete -C /usr/bin/terraform terraform
+
+complete -C /usr/local/bin/odo odo
