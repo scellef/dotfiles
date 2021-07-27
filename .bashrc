@@ -244,7 +244,7 @@ umask 022
 complete -C /usr/bin/vault vault
 
 # >>>> Vagrant command completion (start)
-. /opt/vagrant/embedded/gems/2.2.16/gems/vagrant-2.2.16/contrib/bash/completion.sh
+. /opt/vagrant/embedded/gems/2.2.17/gems/vagrant-2.2.17/contrib/bash/completion.sh
 # <<<<  Vagrant command completion (end)
 
 complete -C /usr/bin/terraform terraform
